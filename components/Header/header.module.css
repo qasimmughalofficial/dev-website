@@ -1,0 +1,297 @@
+/* Container & Glassmorphism Base */
+.headerWrapper {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  padding: 0 40px;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+.desktopNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.glassPill {
+  background: rgba(60, 60, 60, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.navLink, .navLinkButton {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.navLink:hover, .navLinkButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dropdownTrigger {
+  position: relative;
+  height: 100%;
+}
+
+.chevron {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Desktop Dropdown Styles - Now Scrollable */
+.desktopDropdown {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  max-height: 50vh; /* Limits height so it can scroll */
+  overflow-y: auto; /* Enables scrolling */
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Custom Scrollbar for Desktop Dropdown */
+.desktopDropdown::-webkit-scrollbar {
+  width: 6px;
+}
+.desktopDropdown::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.dropdownGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.dropdownItem:hover {
+  opacity: 0.7;
+}
+
+.itemIcon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Buttons */
+.ctaButton {
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile & Tablet Styles */
+@media (max-width: 900px) {
+  .headerWrapper {
+    padding: 20px;
+  }
+  
+  .glassPill {
+    display: none;
+  }
+
+  .ctaButton {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    background: rgba(60, 60, 60, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 8px;
+    margin-left: auto;
+  }
+}
+
+/* Mobile Menu Overlay - Now covers full screen properly */
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(40, 40, 40, 0.6);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  z-index: 100;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.mobileMenuContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 30px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mobileHeaderBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.closeButton, .backButton {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileNavLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 20px 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mobileNavDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.mobileCtaWrapper {
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+
+.mobileCtaButton {
+  width: 100%;
+  background: white;
+  color: black;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Mobile Submenu - Now Scrollable */
+.mobileSubMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  max-height: calc(100vh - 120px); /* Leaves room for top header */
+  overflow-y: auto; /* Enables scrolling */
+  animation: slideLeft 0.2s ease-out;
+}
+
+.mobileSubMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
