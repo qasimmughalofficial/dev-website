@@ -106,7 +106,7 @@ export default function RootLayout({
 					}}
 				/>
 			</head>
-			<body className={urbanist.variable}>
+			<body className={urbanist.variable} suppressHydrationWarning>
 				<Header />
 				{children}
 				<Footer />

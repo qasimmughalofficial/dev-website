@@ -1,15 +1,18 @@
 .banner {
-    padding-top: 100px;
+    padding: 20px;
+    height: 100vh;
 }
 
 .bannerContent {
     background: #e6e6e6;
-    text-align: center;
-    height: 490px;
-    border-radius: 10px;
-    padding: 120px 20px 0 20px;
+    height: 100%;
     position: relative;
+    border-radius: 10px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .bannerOverlay {
@@ -41,11 +44,9 @@
 
 .bannerTitle {
     font-size: 54px;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 48px;
     color: #fff;
-    max-width: 700px;
-    margin: auto;
 }
 
 .bannerTitle span {
@@ -57,35 +58,7 @@
     font-weight: 400;
     line-height: 23px;
     color: #fff;
-    margin: 20px auto;
-    max-width: 520px;
 }
-
-.bannerFeatures {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-}
-
-.featureItems {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.iconWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background-color: #B3884B;
-    border-radius: 100px;
-}
-
 
 /* Responsive */
 
@@ -100,10 +73,6 @@
     .bannerTitle {
         font-size: 45px;
         margin: 0;
-    }
-
-    .bannerFeatures {
-        gap: 15px;
     }
 }
 
@@ -120,10 +89,5 @@
 
     .bannerText {
         margin: 15px auto;
-    }
-
-    .bannerFeatures {
-        flex-direction: column;
-        align-items: center;
     }
 }
