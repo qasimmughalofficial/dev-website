@@ -25,16 +25,15 @@ export default function Header() {
 
 	return (
 		<header className={styles.headerWrapper}>
+			<div className='theme-container'>
 			<div className={styles.desktopNav}>
 				<div className={styles.glassPill}>
 					<div className={styles.topRow}>
 						<div className={styles.logo}>
-							<svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-								<path d="M6 4h4l2 6 2-6h4l-4 10v6h-4v-6L6 4z" />
-							</svg>
+							<a href='#'>DevCritters</a>
 						</div>
 						<nav className={styles.navLinks}>
-							<a href="#" className={styles.navLink}>LOOP™</a>
+							<a href="#" className={styles.navLink}>SERVICES</a>
 							<div className={styles.dropdownTrigger}>
 								<button className={styles.navLinkButton} onClick={() => setIsDesktopDropdownOpen(!isDesktopDropdownOpen)}>
 									CASE STUDIES
@@ -128,6 +127,7 @@ export default function Header() {
 					</div>
 				</div>
 			)}
+			</div>
 		</header>
 	);
 }
