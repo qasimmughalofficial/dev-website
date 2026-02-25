@@ -1,7 +1,7 @@
 import './globals.css';
 import { Urbanist } from 'next/font/google';
-import Header from './components/Header/page';
-import Footer from './components/Footer/page';
+import Header from '@/components/Header/page';
+import Footer from '@/components/Footer/page'
 import { SITE_URL } from '@/hooks/constants';
 
 const urbanist = Urbanist({
@@ -107,6 +107,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className={urbanist.variable}>
+				<Header />
 				{children}
 				<Footer />
 			</body>
